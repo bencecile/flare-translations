@@ -1,0 +1,22 @@
+<!-- This file is for the very topmost level of each language -->
+{% extends "base.html" %}
+
+{% block title %}{{ strings.title }}{% endblock %}
+
+{% block footer %}
+    <small>
+        {{ strings.copyright }}
+    </small>
+{% endblock %}
+
+{% block content %}
+    <div class="display-4 center-text">
+        {{ strings.welcome }}
+    </div>
+    <div class="hRule"></div>
+    {% for novel in novels %}
+        <div class="novelTop col-md-4 col-6">
+            {{ novel.title }}
+        </div>
+    {% endfor %}
+{% endblock %}

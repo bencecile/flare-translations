@@ -1,0 +1,25 @@
+.center-text {
+    text-align: center;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+
+    text-align: center;
+}
+
+.novelTop {
+    border: 3px solid;
+    border-bottom: 6px solid;
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+.hRule {
+    width: 80%;
+    transform: translateX(10%);
+    margin: 1% 0;
+    border-top: 2px solid;
+}

@@ -1,0 +1,45 @@
+<!-- This is the base HTML page that will be used for every user facing page -->
+<!DOCTYPE html>
+<html lang="{{ lang|lower }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        
+        <!-- Load Bootstrap -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+
+        <!-- Load our own CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+        {% for theme in themes %}
+            <link rel="stylesheet" href="{{ theme.href }}" id="{{ theme.id }}" disabled>
+        {% endfor %}
+
+        {% block cssToLoad %}{% endblock %}
+    </head>
+    <body>
+        <!-- Create the top navigation bar that will be used so that you can quickly navigate
+        between novels, change languages, or change any other settings -->
+        <div id="header" class="theme container-fluid">
+            {{ strings.title }}
+        </div>
+
+        <!-- This is the main content block. This should take up nearly the entire page -->
+        <div id="content" class="theme container-fluid">
+            {% block content %}{% endblock %}
+        </div>
+
+        <!-- Create any footer information -->
+        <div id="footer" class="theme container-fluid">
+            {% block footer %}{% endblock %}
+        </div>
+        
+        <!-- Load our own JS last so that the entire page has more time to load -->
+        <script src="/js/main.js"></script>
+
+        <!-- Also load any other JS that specific pages need -->
+        {% block jsToLoad %}{% endblock %}
+    </body>
+</html>

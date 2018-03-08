@@ -1,0 +1,16 @@
+.theme {
+    background: $<mainLight>$;
+    color: $<mainDark>$;
+}
+
+#header {
+    background: $<headerLight>$;
+}
+
+.novelTop {
+    border-color: $<accentLight>$;
+}
+
+.hRule {
+    border-color: $<mainDark>$;
+}
